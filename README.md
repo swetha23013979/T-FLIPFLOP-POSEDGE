@@ -41,6 +41,25 @@ Step 6: Open in RTL viewers to get RTL diagram output
 Developed by :Abinaya A
 
 Regno:212223040003
+```
+module T_FLIPFLOP( input clk, rst_n, input t,
+output reg q,
+output q_bar
+);
+always@(posedge clk) 
+begin 
+if(!rst_n)
+ q<=0;
+ else
+ if(t)
+ q<=~q;
+ else
+ q<=q;
+ end
+ 
+assign q_bar = ~q;
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
 ![de6](https://github.com/23002776/T-FLIPFLOP-POSEDGE/assets/145742657/e46e1a65-ea21-4034-a41f-11b20a7fc1d3)
